@@ -1,17 +1,17 @@
 <template>
   <div>
-    hi
+    导航栏 | 
+    <router-link to="/">Cheng</router-link> | 
+    <router-link to="/xxx">Cheng1</router-link> 
   </div>
-  <Cheng />
+  <hr />
+ <router-view />
 </template>
 
 <script>
-import Cheng from './components/Cheng.vue'
+
 
 export default {
   name: 'App',
-  components: {
-    Cheng
-  }
 }
 </script>

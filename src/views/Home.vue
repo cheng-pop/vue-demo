@@ -20,4 +20,29 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$green: #02bcb0;
+$border-radius: 4px;
+$color: #007974;
+.banner {
+  color: $color;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  >.actions {
+    padding: 8px 0;
+    a {
+      margin: 0 8px;
+      background: $green;
+      color: white;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: $border-radius;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
 </style>

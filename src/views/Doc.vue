@@ -19,7 +19,9 @@
                     </li>
                 </ol>
             </aside>
-            <main>主内容</main>
+            <main>
+                <router-view />
+            </main>
         </div>
     
     </div>
@@ -42,6 +44,8 @@ export default {
     $aside-index : 10;
     aside {
         background: lightblue;
+        position: relative;
+        margin-top: 20px;
         width: 150px;
         padding: 16px 0;
         height: 100%;
@@ -66,7 +70,7 @@ export default {
             position: fixed;
             top: 0;
             left: 0;
-            padding-top: 70px;
+            padding-top: 40px;
         }
     }
 </style>

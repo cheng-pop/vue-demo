@@ -2,4 +2,12 @@
     <div>
         Switch 文档
     </div>
-</template>
+</template> 
+<script>
+export default {
+    
+}
+</script>
+<style lang="scss" scoped>
+    
+</style>

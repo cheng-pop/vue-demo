@@ -4,7 +4,15 @@
         <Dialog v-model:visible="x"
         :closeOnClickOverlay="false"
         :ok="f1" :cancel="f2"
-        ></Dialog>
+        >
+        <template v-slot:content>
+            <div>你好</div>
+            <div>hi</div>
+        </template>
+        <template v-slot:title>
+            <strong>加粗标题</strong>
+        </template>
+        </Dialog>
     </div>
 </template> 
 <script lang="ts">

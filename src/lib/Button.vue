@@ -5,7 +5,7 @@
         <slot />
     </button>
 </template>
-<script lang="ts">
+<script lang="ts" >
 import { computed } from 'vue'
 export default {
     props:{
@@ -21,7 +21,7 @@ export default {
             type:String,
             default: 'normal'
         },
-         disabled: {
+        disabled: {
             type: Boolean,
             default: false,
         },

@@ -5,18 +5,19 @@
       <component :is="component"/>
     </div>
     <div class="demo-actions">
-      <Button  @click="toggleCode">查看代码</Button>
+      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="showCode" v-else>查看代码</Button>
     </div>
     <div class="demo-code" v-if="codeVisible">
-       <pre class="language-html" v-html=
-       "html" />
+      <pre class="language-html" v-html="html" />
     </div>
   </div>
 </template>
 <script lang="ts">
 import Button from '../lib/Button.vue'
-import Prism from 'prismjs';
+import 'prismjs';
 import  'prismjs/themes/prism.css'
+const Prism = (window as any).Prism
 import { computed, ref } from '@vue/runtime-core';
 export default {
   components:{
@@ -30,13 +31,15 @@ export default {
          return  Prism.highlight(props.component.__sourceCode, 
          Prism.languages.html, 'html')
       })
-      const toggleCode = () => codeVisible.value = !codeVisible.value
       const codeVisible = ref(false)
+      const showCode = () => codeVisible.value = true
+      const hideCode = () => codeVisible.value = false
+    console.log(codeVisible.value)
     return {
       Prism,
       html,
-      codeVisible,
-      toggleCode
+      hideCode,
+      showCode
     }
   }
 }

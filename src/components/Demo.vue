@@ -1,49 +1,54 @@
 <template>
-  <div class="demo">
-    <h2>{{component.__sourceCodeTitle}}</h2>
-    <div class="demo-component">
-      <component :is="component"/>
-    </div>
-    <div class="demo-actions">
-      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode" v-else>查看代码</Button>
-    </div>
-    <div class="demo-code" v-if="codeVisible">
-      <pre class="language-html" v-html="html" />
-    </div>
+<div class="demo">
+  <h2>{{component.__sourceCodeTitle}}</h2>
+  <div class="demo-component">
+    <component :is="component" />
   </div>
+  <div class="demo-actions">
+    <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
+    <Button @click="showCode" v-else>查看代码</Button>
+  </div>
+  <div class="demo-code" v-if="codeVisible">
+    <pre class="language-html" v-html="html" />
+  </div>
+
+</div>
 </template>
+
 <script lang="ts">
 import Button from '../lib/Button.vue'
 import 'prismjs';
-import  'prismjs/themes/prism.css'
+import 'prismjs/themes/prism.css'
+import {
+  computed,
+  ref
+} from 'vue';
 const Prism = (window as any).Prism
-import { computed, ref } from '@vue/runtime-core';
 export default {
-  components:{
-      Button
+  components: {
+    Button
   },
   props: {
-    component: Object,
+    component: Object
   },
   setup(props) {
-      const html = computed(()=>{
-         return  Prism.highlight(props.component.__sourceCode, 
-         Prism.languages.html, 'html')
-      })
-      const codeVisible = ref(false)
-      const showCode = () => codeVisible.value = true
-      const hideCode = () => codeVisible.value = false
-    console.log(codeVisible.value)
+    const html = computed(() => {
+      return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html')
+    })
+    const showCode = () => codeVisible.value = true
+    const hideCode = () => codeVisible.value = false
+    const codeVisible = ref(false)
     return {
       Prism,
       html,
-      hideCode,
-      showCode
+      codeVisible,
+      showCode,
+      hideCode
     }
   }
 }
 </script>
+
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
 .demo {

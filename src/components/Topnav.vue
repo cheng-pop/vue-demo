@@ -26,7 +26,6 @@ export default {
     },
     setup(){
         const asideVisible = inject<Ref<boolean>>('asideVisible')
-        console.log(asideVisible.value)
         const toggleMenu = ()=>{
             asideVisible.value = !asideVisible.value
         }

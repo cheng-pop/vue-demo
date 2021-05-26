@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div >
     <div class="topnavAndBanner">
     <Topnav />
     <div class="banner">
-        <h1>UI</h1>
+        <h1>UI界面</h1>
         <h2>框架</h2>
         <p class="actions">
             <a href="https://github.com">github</a>
-            <router-link to="/doc">开始</router-link>
+            <router-link to="/doc">start</router-link>
         </p>
     </div>
     </div>
@@ -32,7 +32,7 @@
             <use xlink:href="#icon-light"></use>
           </svg>
           <h3>代码易读</h3>
-          <p>每个组件的源代码都极其简洁</p>
+          <p>每个组件的源代码都比较简洁</p>
         </li>
       </ul>
     </div>
@@ -47,17 +47,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-$green: #02bcb0;
+$green: #ac93d5;
 $border-radius: 4px;
-$color: #007974;
+$color: #b296d6;
 .topnavAndBanner{
-  background: linear-gradient(145deg, rgba(2,0,36,1) 0%, 
-  rgba(227,255,253,1) 0%, rgba(183,233,230,1) 100%);
   clip-path: ellipse(80% 60% at 50% 40%);
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 .features{
   margin: 64px auto;
-  width: 400px;
+  width: 100%;
   @media (min-width: 800px) {
     width: 800px;
   }
@@ -71,21 +70,21 @@ $color: #007974;
       width: 400px;
       margin: 16px 0;
       display: grid;
-      justify-content: start;
       align-content: space-between;
+      justify-content: start; 
+      grid-template-columns: 80px auto;
+      grid-template-rows: 1fr auto;
       grid-template-areas:
         "icon title"
         "icon text";
-      grid-template-columns: 80px auto;
-      grid-template-rows: 1fr auto;
       >svg {
-        grid-area: icon;
         width: 64px;
         height: 64px;
+        grid-area: icon;
       }
       >h3 {
-        grid-area: title;
         font-size: 28px;
+        grid-area: title;
       }
       >p {
         grid-area: text
@@ -95,7 +94,7 @@ $color: #007974;
 }
 .banner {
   color: $color;
-  padding: 100px 0;
+  padding: 130px 0;
   display: flex;
   justify-content: center;
   align-items: center;

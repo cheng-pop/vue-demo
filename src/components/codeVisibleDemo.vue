@@ -5,8 +5,19 @@
     <component :is="component" />
   </div>
   <div class="demo-actions">
-    <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-    <Button @click="showCode" v-else>查看代码</Button>
+    <div @click="hideCode" v-if="codeVisible">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-shangla"></use>
+      </svg>
+      <span>隐藏代码</span>
+    </div>
+    <div @click="showCode" v-else>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-xiala"></use>
+      </svg>
+      <span>查看代码</span>
+      
+    </div>
   </div>
   <div class="demo-code" v-if="codeVisible">
     <pre class="language-html" v-html="html" />
@@ -64,7 +75,24 @@ $border-color: #d9d9d9;
   }
   &-actions {
     padding: 8px 16px;
+    text-align: center;
     border-top: 1px dashed $border-color;
+    >div{
+      >svg{
+        width: 12px;
+        height: 12px;
+        margin-right: 6px;
+      }
+      >span{
+        font-size: 14px;
+      }
+    }
+    >div:hover{
+      color: #6553e5;
+    }
+  }
+  &-actions:hover{
+    background: #f9fafc;
   }
   &-code {
     padding: 8px 16px;

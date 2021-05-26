@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {createWebHashHistory,createRouter} from 'vue-router'
 import Home from './views/Home.vue'
 import Doc from './views/Doc.vue'
@@ -17,7 +18,9 @@ export const router = createRouter({
             {path: '' , redirect: '/doc/intro' },
             {path:'intro', component: md('intro')},
             {path:'install', component: md('install')},
-            {path:'get-start', component: md('get-start') },
+            {path:'get-use', component: md('get-use') },
+            {path:'others', component: md('others') },
+            {path:'others-project', component: md('others-project') },
             {path: 'switch' , component: SwitchDemo},
             {path: 'button' , component: ButtonDemo},
             {path: 'dialog' , component: DialogDemo},

@@ -2,7 +2,7 @@
         <div class="topnav">
             <router-link to="/" class="logo" >
               <svg class="icon">
-                  <use xlink:href="#icon-juzi"></use>
+                  <use xlink:href="#icon-lanmei"></use>
               </svg>
             </router-link>
             <ul class="menu">
@@ -41,15 +41,19 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100vw;
+  height: 60px;
+  background: white;
   z-index: 20;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 14px rgb(228, 225, 225);
   >.logo {
     max-width: 6em;
     margin-right: auto;
     > svg{
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
     }
   }
   >.menu {
@@ -59,10 +63,13 @@ export default {
     >li {
       margin: 0 1em;
     }
+    >li:hover{
+      color: #ac93d5;
+    }
   }
   > .toggleAside{
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     position: absolute;
     left: 16px;
     top: 50%;
@@ -80,6 +87,13 @@ export default {
       display: inline-block;
     }
 
+  }
+  .router-link-active{
+    text-decoration: none;
+    
+  }
+  a {
+  text-decoration: none; 
   }
 }
 </style>

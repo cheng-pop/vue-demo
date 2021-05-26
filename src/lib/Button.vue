@@ -1,7 +1,7 @@
 <template>
-    <button class="gulu-button" 
+    <button class="cmq-button" 
     :class="classes" :disabled="disabled">
-    <span v-if="loading" class="gulu-loadingIndicator"></span>
+    <span v-if="loading" class="cmq-loadingIndicator"></span>
         <slot />
     </button>
 </template>
@@ -34,9 +34,9 @@ export default {
         const {theme,size,level} = props
         const classes = computed(()=>{
            return{
-               [`gulu-theme-${theme}`]:theme,
-               [`gulu-size-${size}`]:size,
-               [`gulu-level-${level}`]:level,
+               [`cmq-theme-${theme}`]:theme,
+               [`cmq-size-${size}`]:size,
+               [`cmq-level-${level}`]:level,
            } 
         })
         return {classes}
@@ -47,11 +47,13 @@ export default {
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
-$blue: #40a9ff;
+$blue: #6553e5;
 $radius: 4px;
-$red: red;
+$red: #bf2437;
 $grey: grey;
-.gulu-button {
+$green: #25b597;
+$orange: #fff405;
+.cmq-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -67,7 +69,9 @@ $grey: grey;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
   transition: background 250ms;
   & + & {
-    margin-left: 8px;
+    margin-left: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
   &:hover,
   &:focus {
@@ -80,34 +84,35 @@ $grey: grey;
   &::-moz-focus-inner {
     border: 0;
   }
-  &.gulu-theme-link{
+  &.cmq-theme-link{
     border-color: transparent;
     box-shadow: none;
-    color: $blue;
+    color: color;
     &:hover,&:focus{
       color: lighten($blue, 10%);
+      text-decoration: underline;
     }
   }
-  &.gulu-theme-text{
+  &.cmq-theme-text{
     border-color: transparent;
     box-shadow: none;
     color: inherit;
     &:hover,&:focus{
-      background: darken(white, 5%);;
+      color: darken($blue, 5%);;
     }
   }
-   &.gulu-size-big {
+   &.cmq-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
-  &.gulu-size-small {
+  &.cmq-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
-  &.gulu-theme-button {
-    &.gulu-level-main {
+  &.cmq-theme-button {
+    &.cmq-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
@@ -117,7 +122,37 @@ $grey: grey;
         border-color: darken($blue, 10%);
       }
     }
-    &.gulu-level-danger {
+    &.cmq-level-success {
+      background: $green;
+      color: white;
+      border-color: $green;
+      &:hover,
+      &:focus {
+        background: darken($green, 10%);
+        border-color: darken($green, 10%);
+      }
+    }
+    &.cmq-level-message {
+      background: $grey;
+      color: white;
+      border-color: $grey;
+      &:hover,
+      &:focus {
+        background: darken($grey, 10%);
+        border-color: darken($grey, 10%);
+      }
+    }
+    &.cmq-level-warn {
+      background: $orange;
+      color: white;
+      border-color: $orange;
+      &:hover,
+      &:focus {
+        background: darken($orange, 10%);
+        border-color: darken($orange, 10%);
+      }
+    }
+    &.cmq-level-danger {
       background: $red;
       border-color: $red;
       color: white;
@@ -128,32 +163,7 @@ $grey: grey;
       }
     }
   }
-  &.gulu-theme-link {
-    &.gulu-level-danger {
-      color: $red;
-      &:hover,
-      &:focus {
-        color: darken($red, 10%);
-      }
-    }
-  }
-  &.gulu-theme-text {
-    &.gulu-level-main {
-      color: $blue;
-      &:hover,
-      &:focus {
-        color: darken($blue, 10%);
-      }
-    }
-    &.gulu-level-danger {
-      color: $red;
-      &:hover,
-      &:focus {
-        color: darken($red, 10%);
-      }
-    }
-  }
-   &.gulu-theme-button {
+  &.cmq-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
@@ -162,13 +172,13 @@ $grey: grey;
       }
     }
   }
-  &.gulu-theme-link, &.gulu-theme-text {
+  &.cmq-theme-link, &.cmq-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
-  > .gulu-loadingIndicator{
+  > .cmq-loadingIndicator{
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -177,10 +187,10 @@ $grey: grey;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    animation: gulu-spin 1s infinite linear;
+    animation: cmq-spin 1s infinite linear;
   }
 }
-@keyframes gulu-spin {
+@keyframes cmq-spin {
   0%{transform: rotate(0deg)} 
   100%{transform: rotate(360deg)} 
 }

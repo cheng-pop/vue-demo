@@ -1,21 +1,21 @@
 <template>
     <template v-if="visible">
         <teleport to='body' >
-            <div @click="onClickOverlay" class="gulu-dialog-overlay"></div>
-            <div class="gulu-dialog-wrapper">
-            <div class="gulu-dialog">
+            <div @click="onClickOverlay" class="cmq-dialog-overlay"></div>
+            <div class="cmq-dialog-wrapper">
+            <div class="cmq-dialog">
                 <header>
                     <slot name="title" />
                     <span @click="close"
-                    class="gulu-dialog-close">
+                    class="cmq-dialog-close">
                     </span>
                 </header>
                 <main>
                     <slot name="content"/>
                 </main>
                 <footer>
-                    <Button level="main" @click="ok">OK</Button>
                     <Button @click="cancel">Cancel</Button>
+                    <Button level="main" @click="ok">OK</Button>
                 </footer>
             </div>
             </div>
@@ -71,7 +71,7 @@ export default {
 <style lang="scss">
 $radius: 4px;
 $border-color: #d9d9d9;
-.gulu-dialog {
+.cmq-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);

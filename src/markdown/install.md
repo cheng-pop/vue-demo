@@ -1,15 +1,17 @@
-# 安装
+## 安装
 
-打开终端运行下列命令：
+因为只是为了学习的UI组件，这里的安装以View UI为例。
 
-```
-npm install king-ui
-```
-
-或
+用 <font color=red>npm</font> 来安装：
 
 ```
-yarn add king-ui
+npm install view-design --save
 ```
 
-下一节：[开始使用](#/doc/get-started)
+或用 <font color=red>yarn </font>来安装
+
+```
+yarn add view-design --save
+```
+
+下一节：[<font color=#6553e5>快速上手</font>](#/doc/get-use)

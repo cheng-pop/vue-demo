@@ -1,10 +1,10 @@
 <demo>
-常规使用
+基本用法
 </demo>
 <template>
 <Tabs v-model:selected="x">
-  <Tab title="导航1">内容1</Tab>
-  <Tab title="导航2">内容2</Tab>
+  <Tab title="水果">芒果，香蕉，苹果，草莓，西瓜........</Tab>
+  <Tab title="蔬菜">芹菜，青菜，萝卜，包菜，空心菜........</Tab>
 </Tabs>
 </template>
 
@@ -20,7 +20,7 @@ export default {
     Tab
   },
   setup() {
-    const x = ref('导航2')
+    const x = ref('水果')
     return {
       x
     }

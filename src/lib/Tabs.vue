@@ -1,17 +1,16 @@
 <template>
-    <div class="gulu-tabs">
-        <div class="gulu-tabs-nav" ref="container">
-            <div class="gulu-tabs-nav-item" v-for="(t,index) in titles" :key="index"
+    <div class="cmq-tabs">
+        <div class="cmq-tabs-nav" ref="container">
+            <div class="cmq-tabs-nav-item" v-for="(t,index) in titles" :key="index"
             :ref="el => { if (t === selected) selectedItem = el }"
             @click="select(t)" :class="{selected: t===selected}"
             >{{t}}</div>
-            <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
+            <div class="cmq-tabs-nav-indicator" ref="indicator"></div>
         </div>
-        <div class="gulu-tabs-content">
-          <component class="gulu-tabs-content-item"
+        <div class="cmq-tabs-content">
+          <component class="cmq-tabs-content-item"
           :class="{selected:c.props.title === selected}" v-for="(c,index) in defaults" 
           :is="c" :key="index" />
-             <!-- <component :is="current" :key="current.props.title" /> -->
         </div>
     </div>
 </template>
@@ -63,10 +62,10 @@ export default {
 }
 </script>
 <style lang="scss">
-$blue: #40a9ff;
+$blue: #6553e5;
 $color: #333;
 $border-color: #d9d9d9;
-.gulu-tabs {
+.cmq-tabs {
   &-nav {
     display: flex;
     color: $color;

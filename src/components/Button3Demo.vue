@@ -1,11 +1,11 @@
 <demo>
-    常规使用
+    大小按钮
 </demo>
 <template>
     <div>
-        <Button>你好</Button>
-        <Button theme="link">你好</Button>
-        <Button theme="text">你好</Button>
+        <Button size="small">小号</Button>
+        <Button>正常</Button>
+        <Button size="big">大号</Button>
     </div>
 </template>
 <script lang="ts">

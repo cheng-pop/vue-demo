@@ -1,12 +1,11 @@
 <demo>
-一键打开 Dialog
+采用openDialog函数打开 Dialog
 </demo>
 <template>
 <div>
-  <Button @click="showDialog">打开对话框</Button>
+  <Button @click="showDialog">一键打开对话框</Button>
 </div>
 </template>
-
 <script lang="ts">
 import Button from '../lib/Button.vue'
 import {
@@ -24,7 +23,7 @@ export default {
     const showDialog = () => {
       openDialog({
         title: h('strong', {}, '标题'),
-        content: '你好',
+        content: '这是采用openDialog函数写出来的对话框',
         ok() {
           console.log('ok')
         },

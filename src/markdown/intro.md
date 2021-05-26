@@ -1,4 +1,4 @@
-## 介绍
+## 说明
 
 这是一个为了学习和上手项目的基于 <font color=red>Vue 3</font> 和 <font color=red>TypeScript</font> UI 组件库。
 

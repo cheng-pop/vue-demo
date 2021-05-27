@@ -6,7 +6,7 @@
         <h1>UI界面</h1>
         <h2>框架</h2>
         <p class="actions">
-            <a href="https://github.com">github</a>
+            <a href="https://github.com/cheng-pop/vue-demo">github</a>
             <router-link to="/doc">start</router-link>
         </p>
     </div>

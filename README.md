@@ -23,4 +23,14 @@
 
 ### 项目
 
-![Image text](https://github.com/cheng-pop/music/blob/master/images/shouye.png)
+![首页](https://github.com/cheng-pop/vue-demo/tree/main/src/assets/1.png)
+
+![说明](https://github.com/cheng-pop/vue-demo/tree/main/src/assets/2.png)
+
+![button组件](https://github.com/cheng-pop/vue-demo/tree/main/src/assets/3.png)
+
+![switch组件](https://github.com/cheng-pop/vue-demo/tree/main/src/assets/4.png)
+
+![tas组件](https://github.com/cheng-pop/vue-demo/tree/main/src/assets/5.png)
+
+![dialog组件](https://github.com/cheng-pop/vue-demo/tree/main/src/assets/6.png)
